@@ -16,8 +16,11 @@ const Header = () => {
         <Link className="btn btn-ghost normal-case text-xl" to="/">
           company
         </Link>
-        <Link className="btn btn-ghost normal-case text-xl" to="/">
+        <Link className="btn btn-ghost normal-case text-xl" to="/home">
           Home
+        </Link>
+        <Link className="btn btn-ghost normal-case text-xl" to="/orders">
+          Orders
         </Link>
         <Link className="btn btn-ghost normal-case text-xl" to="login">
           Login
