@@ -1,11 +1,23 @@
-import React from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import React, { useContext } from "react";
+import { AuthContext } from "./UserContext";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  console.log(signIn);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+      })
+      .catch((error) => console.error(error));
+
     console.log(email, password);
   };
   return (
